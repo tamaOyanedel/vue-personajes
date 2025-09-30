@@ -1,39 +1,39 @@
-<script>
-export default {
-  name: "FormPersonaje",
-  data() {
-    return {
-      nombre: "",
-      descripcion: ""
-    }
-  },
-  methods: {
-    enviarPersonaje() {
-      if (this.nombre && this.descripcion) {
-        this.$emit("agregar", {
-          nombre: this.nombre,
-          descripcion: this.descripcion
-        })
-        this.nombre = ""
-        this.descripcion = ""
-      } else {
-        alert("Por favor, complete ambos campos.")
-      }
-    }
+<script setup>
+import { ref } from "vue";
+
+const emit = defineEmits(["agregar"]);
+
+const nombre = ref("");
+const descripcion = ref("");
+
+// Validación y envío
+const enviarPersonaje = () => {
+  if (!nombre.value.trim() || !descripcion.value.trim()) {
+    alert("⚠️ Por favor, complete ambos campos.");
+    return;
   }
-}
+
+  emit("agregar", {
+    nombre: nombre.value,
+    descripcion: descripcion.value
+  });
+
+  // Reset
+  nombre.value = "";
+  descripcion.value = "";
+};
 </script>
 
 <template>
   <div class="card shadow-sm mb-4">
     <div class="card-body">
       <h3 class="card-title mb-3">
-        <i class="bi bi-person-plus me-2"></i>Agregar Personaje
+        <i class="bi bi-person-plus me-2"></i>Agregar Pokemón
       </h3>
 
       <div class="mb-3">
         <label class="form-label">Nombre</label>
-        <input v-model="nombre" type="text" class="form-control" placeholder="Nombre del personaje" />
+        <input v-model="nombre" type="text" class="form-control" placeholder="Nombre del pokemón" />
       </div>
 
       <div class="mb-3">

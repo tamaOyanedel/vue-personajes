@@ -1,24 +1,21 @@
-<script>
-export default {
-  name: "ListaPersonajes",
-  props: {
-    personajes: {
-      type: Array,
-      required: true
-    }
-  },
-  methods: {
-    iconoPara(nombre) {
-      const nombreLower = nombre.toLowerCase()
-      if (nombreLower.includes("pikachu")) return "bi bi-lightning-charge-fill"
-      if (nombreLower.includes("kakuna")) return "bi bi-bug-fill"
-      if (nombreLower.includes("beedrill")) return "bi bi-bezier"
-      if (nombreLower.includes("metapod")) return "bi bi-shield-fill-check"
-      if (nombreLower.includes("rattata")) return "bi bi-mouse"
-      return "bi bi-star-fill"
-    }
+<script setup>
+const props = defineProps({
+  personajes: {
+    type: Array,
+    required: true
   }
-}
+});
+
+// Íconos dinámicos
+const iconoPara = (nombre) => {
+  const nombreLower = nombre.toLowerCase();
+  if (nombreLower.includes("pikachu")) return "bi bi-lightning-charge-fill";
+  if (nombreLower.includes("kakuna")) return "bi bi-bug-fill";
+  if (nombreLower.includes("beedrill")) return "bi bi-bezier";
+  if (nombreLower.includes("metapod")) return "bi bi-shield-fill-check";
+  if (nombreLower.includes("rattata")) return "bi bi-mouse";
+  return "bi bi-star-fill";
+};
 </script>
 
 <template>

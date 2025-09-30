@@ -1,0 +1,11 @@
+[
+  {
+    "pokemones": [
+      { "id": "1", "nombre": "Pikachu", "descripcion": "Un ratón eléctrico muy amigable ⚡" },
+      { "id": "2", "nombre": "Kakuna", "descripcion": "Un Pokémon capullo que evoluciona en Beedrill 🐝" },
+      { "id": "3", "nombre": "Beedrill", "descripcion": "Un Pokémon abeja con aguijones peligrosos 🐝⚔️" },
+      { "id": "4", "nombre": "Metapod", "descripcion": "Un capullo verde que solo conoce 'Endurecer' 🟢" },
+      { "id": "5", "nombre": "Rattata", "descripcion": "Una pequeña rata muy rápida 🐭" }
+    ]
+  }
+]
